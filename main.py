@@ -141,6 +141,12 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
         "url": "http://weixin.qq.com/download",
         "topcolor": "#FF0000",
         "data": {
+            "today": {
+                "value": today
+            },
+            "week": {
+                "value": week
+            },
             "date": {
                 "value": "{} {}".format(today, week),
                 "color": get_color()
@@ -221,5 +227,5 @@ if __name__ == "__main__":
     note_ch, note_en = get_ciba()
     # 公众号推送消息
     for user in users:
-        send_message(user, accessToken, city, weather, max_temperature, min_temperature, note_ch, note_en)
+        send_message(user, accessToken, city, weather, max_temperature, min_temperature, note_ch, note_en, today, week)
     os.system("pause")
