@@ -141,12 +141,6 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
         "url": "http://weixin.qq.com/download",
         "topcolor": "#FF0000",
         "data": {
-            "today": {
-                "value": today
-            },
-            "week": {
-                "value": week
-            },
             "date": {
                 "value": "{} {}".format(today, week),
                 "color": get_color()
@@ -168,7 +162,7 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
                 "color": get_color()
             },
             "love_day": {
-                "value": birthday_data,
+                "value": "{} {}".format(today, week),
                 "color": get_color()
             },
             "note_en": {
