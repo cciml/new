@@ -134,7 +134,10 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
     for key, value in birthdays.items():
         # 获取距离下次生日的时间
         birth_day = get_birthday(value["birthday"], year, today)
-        birthday_data = int(birth_day)
+        if birth_day == 0:
+            birthday_data = "{}生日哦，祝{}生日快乐！".format(value["name"], value["name"])
+        else:
+            birthday_data = "距离{}的生日还有{}天".format(value["name"], birth_day)
     data = {
         "touser": to_user,
         "template_id": config["template_id"],
