@@ -135,8 +135,6 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
         # 获取距离下次生日的时间
         birth_day = get_birthday(value["birthday"], year, today)
         birthday_data = int(birth_day)
-        # 将生日数据插入data
-        data["data"][key] = {"value": birthday_data, "color": get_color()}
     data = {
         "touser": to_user,
         "template_id": config["template_id"],
@@ -174,6 +172,9 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
             "note_ch": {
                 "value": note_ch,
                 "color": get_color()
+            },
+            "birthday1": {
+                "value": birthday_data
             }
         }
     }
