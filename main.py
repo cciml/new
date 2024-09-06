@@ -162,7 +162,7 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
                 "color": get_color()
             },
             "love_day": {
-                "value": love_days,
+                "value": birthday_data,
                 "color": get_color()
             },
             "note_en": {
